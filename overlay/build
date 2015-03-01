@@ -6,4 +6,4 @@
 echo "Compiling the overlay from .dts to .dtbo"
 
 # Compile overlay for P9_16 - Steering
-dtc -O dtb -o /lib/firmware/STEER_PWM_P9_16_0x6-00A0.dtbo -b 0 -@ STEER_PWM_P9_16_0x6-00A0.dts
+dtc -O dtb -o /lib/firmware/car_pwm_controls-00A0.dtbo -b 0 -@ car_pwm_controls-00A0.dts
