@@ -1,6 +1,9 @@
 /**
- * @Author: Ethan Slattery
- * @Date:   22DEC2015
+ * Author:  Ethan Slattery
+ * Created: 22DEC2015
+ *
+ * Modified By: nobody yet!
+ * Modified Date: :)
  *
  * AUTONOMOUS CAR TESTING PROGRAM
  *
@@ -31,6 +34,9 @@
 #define STEERING    9	// Pin for the steering servo
 #define STEER_POT   2	// Pin for the steering testing pot
 #define MOTOR_POT   1	// Pin for the motor testing pot
+#define PING_PIN    7	// PIN FOR PIN ULTRASONIC SENSOR
+
+long GetDistance(int pingPin);
 
 int main() {
   // Arduino Initialization
@@ -62,8 +68,8 @@ int main() {
   digitalWrite(PWR_SWITCH, HIGH);
   delay(2000);
 
-  int steerVal = 0;
-  int motorVal = 0;
+  int  steerVal = 0;
+  int  motorVal = 0;
   while(1)
   {
       // Obtain a scaled steering value
@@ -75,7 +81,9 @@ int main() {
       Serial.print("Steering: ");
       Serial.print(steerVal);
       Serial.print("\tMotor: ");
-      Serial.println(motorVal);
+      Serial.print(motorVal);
+      Serial.print("\tDistance: ");
+      Serial.println(GetDistance(PING_PIN));
 
       steering.write(steerVal);
       motor.write(motorVal);
@@ -83,4 +91,22 @@ int main() {
   }// END OF FOREVER LOOP
 
   return 0; // BAD NEWS - NEVER HAPPENS (prevents compiler whining)
+}
+
+long GetDistance(int pingPin)
+{
+  // The PING))) is triggered by a HIGH pulse of 2 or more microseconds.
+  // Give a short LOW pulse beforehand to ensure a clean HIGH pulse:
+  pinMode(pingPin, OUTPUT);
+  digitalWrite(pingPin, LOW);
+  delayMicroseconds(2);
+  digitalWrite(pingPin, HIGH);
+  delayMicroseconds(5);
+  digitalWrite(pingPin, LOW);
+
+  // The same pin is used to read the signal from the PING))): a HIGH
+  // pulse whose duration is the time (in microseconds) from the sending
+  // of the ping to the reception of its echo off of an object.
+  pinMode(pingPin, INPUT);
+  return pulseIn(pingPin, HIGH) / 74 / 2;
 }
