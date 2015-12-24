@@ -11,7 +11,8 @@ Will post more later once finals are over but I wanted to start the repo. Most i
 #### What we can learn from this project:
   * Microcontroller programming (aruindo, etc)
   * Embedded Computers (single board computers like the pi)
-  * Signlas and Controls
+  * Signals and Controls
+  * Sensor Fusion
   * Hardware design and prototyping
   * Assembly Language - I don't know it but if you do then its a great opportunity to flex your knowledge!
   * AI - probably very crude but we can see
