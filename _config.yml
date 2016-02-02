@@ -1,8 +1,8 @@
 title: Long Haul
 description: Long Form Jekyll theme built with SASS / COMPASS / SUSY
 
-url: http://saddlebackcss.github.io/
-baseurl: "AutonomousCar"
+url: 
+baseurl: "http://saddlebackcss.github.io/AutonomousCar"
 paginate_path: "blog/page:num/"
 permalink: blog/:title/
 
@@ -20,9 +20,9 @@ navigation:
    url: /contact
 
 social:
-   github: brianmaierjr
-   twitter: brianmaierjr
-   facebook: brianmaierjr
-   email: brimaidesigns@gmail.com
+   github: 
+   twitter: 
+   facebook: 
+   email: 
 
-google_analytics: "UA-58263416-1"
+google_analytics: 
