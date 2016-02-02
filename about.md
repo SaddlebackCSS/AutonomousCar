@@ -1,6 +1,6 @@
 ---
 layout: default
-title: About Saddleback AutonomousCar
+title: About SBCSS AutonomousCar
 ---
 
 <div class="post">

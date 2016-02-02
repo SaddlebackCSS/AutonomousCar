@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Contact SaddlebackAVC
+title: Contact SBCSS
 ---
 
 <div id="contact">
