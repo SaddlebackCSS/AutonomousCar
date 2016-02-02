@@ -1,5 +1,5 @@
-title: Long Haul
-description: Long Form Jekyll theme built with SASS / COMPASS / SUSY
+title: Saddleback Autonomous Vehicle
+description: Saddleback Team for Sparkfun AVC 2016
 
 url: 
 baseurl: "http://saddlebackcss.github.io/AutonomousCar"
@@ -20,7 +20,7 @@ navigation:
    url: /contact
 
 social:
-   github: 
+   github: github.com/SaddlebackCSS/AutonomousCar
    twitter: 
    facebook: 
    email: 
