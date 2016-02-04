@@ -1,3 +1,16 @@
+# CLION USER SPECIF FILES
+ .idea/workspace.xml
+ .idea/tasks.xml
+ .idea/dictionaries
+
+# CLION Gradle:
+ .idea/gradle.xml
+ .idea/libraries
+
+# CLION File-based project format:
+*.ipr
+*.iws
+
 *.pydevproject
 .metadata
 .gradle

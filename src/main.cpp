@@ -83,7 +83,7 @@ int main() {
       Serial.print("\tMotor: ");
       Serial.print(motorVal);
       Serial.print("\tDistance: ");
-      Serial.println(GetDistance(PING_PIN));
+      //Serial.println(GetDistance(PING_PIN));
 
       steering.write(steerVal);
       motor.write(motorVal);

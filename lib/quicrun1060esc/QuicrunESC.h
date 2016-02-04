@@ -16,9 +16,10 @@
 
 #ifndef QUICRUNESC_H_
 #define QUICRUNESC_H_
+#define ARDUINO_ARCH_AVR
 
-#include "Arduino.h"
-#include "avr/Servo.cpp"
+#include <Arduino.h>
+#include "src/Servo.h"
 
 #define NEUTRAL_THROTTLE 90
 
