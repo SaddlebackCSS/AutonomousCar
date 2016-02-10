@@ -2,7 +2,7 @@ title: Saddleback Autonomous Vehicle
 description: Saddleback Team for Sparkfun AVC 2016
 
 url: 
-baseurl: "http://saddlebackcss.github.io/AutonomousCar"
+baseurl: "http://saddlebackcss.github.io/AutonomousCar/"
 paginate_path: "blog/page:num/"
 permalink: blog/:title/
 
