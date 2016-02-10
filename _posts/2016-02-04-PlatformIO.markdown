@@ -44,7 +44,7 @@ platformio init --ide clion --board diecimilaatmega328
 since I already had the suggested fodler structure it downloaded all the necessary libraries and tools for an AVR/Arduino project, created the Cmakelists.txt, and a platformio.ini and was done. I opened Clion and it recognized the folder as a project and was programming! Auto complete with all the libraries, compiling, and uploading to my board with no other settings. Nice!
 
 <figure>
-	<img src="../assets/img/clion_avr.PNG">
+	<img src="/assets/img/clion_avr.PNG">
 	<figcaption>Clion Working with my project, proof!</figcaption>
 </figure>
 
