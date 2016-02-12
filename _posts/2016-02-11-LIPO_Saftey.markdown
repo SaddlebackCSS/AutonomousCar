@@ -20,7 +20,7 @@ Lithium Polymer Batteries are the most common batteries you will see on R.C. veh
 #### SAFTEY! ####
 LIPO batteries are known to *EXPLODE*!
 <figure>
-	<img src="{{ https://i.ytimg.com/vi/-DcpANRFrI4/hqdefault.jpg }}" alt="exploding battery">
+	<img src="https://i.ytimg.com/vi/-DcpANRFrI4/hqdefault.jpg" alt="exploding battery">
 	<figcaption>Look Out!</figcaption>
 </figure>
  
