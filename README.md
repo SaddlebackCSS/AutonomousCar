@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/SaddlebackCSS/AutonomousCar.png?label=ready&title=Ready)](https://waffle.io/SaddlebackCSS/AutonomousCar)
 # Autonomous Car for Sparkfun AVC
 
 ---
