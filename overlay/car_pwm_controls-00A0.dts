@@ -45,7 +45,7 @@
 				pwms 		= <&ehrpwm1 0 20000000 1>;
 				pwm-names 	= "PWM_P9_14";
 			    pinctrl-names	= "default";
-			    pinctrl-0	= <&pwm_P9_14>;
+			    pinctrl-0	= <&car_pwm_controls_pins>;
 				enabled		= <1>;
 				duty		= <0>;
 				status 		= "okay";
@@ -55,7 +55,7 @@
 				pwms 		= <&ehrpwm1 1 20000000 1>;
 				pwm-names 	= "PWM_P9_16";
 			    pinctrl-names	= "default";
-			    pinctrl-0	= <&pwm_P9_16>;
+			    pinctrl-0	= <&car_pwm_controls_pins>;
 				enabled		= <1>;
 				duty		= <0>;
 				status 		= "okay";
