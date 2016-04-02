@@ -40,25 +40,26 @@
 	fragment@1 {
 		target = <&ocp>;
 		__overlay__ {
-			pwm_test_P9_14 {
+			car_pwm_helper {
 				compatible	= "pwm_test";
-				pwms 		= <&ehrpwm1 0 20000000 1>;
-				pwm-names 	= "PWM_P9_14";
-			    pinctrl-names	= "default";
-			    pinctrl-0	= <&car_pwm_controls_pins>;
-				enabled		= <1>;
-				duty		= <0>;
-				status 		= "okay";
-			};
-			pwm_test_P9_16 {
-				compatible	= "pwm_test";
-				pwms 		= <&ehrpwm1 1 20000000 1>;
-				pwm-names 	= "PWM_P9_16";
-			    pinctrl-names	= "default";
-			    pinctrl-0	= <&car_pwm_controls_pins>;
-				enabled		= <1>;
-				duty		= <0>;
-				status 		= "okay";
+				pinctrl-names	= "default";
+				pinctrl-0	= <&car_pwm_controls_pins>;
+
+				car_motor {
+					pwms 		= <&ehrpwm1 0 20000000 1>;
+					pwm-names 	= "PWM_P9_14";
+					enabled		= <1>;
+					duty		= <0>;
+					status 		= "okay";
+				};
+			    
+				car_steering {
+					pwms 		= <&ehrpwm1 1 20000000 1>;
+					pwm-names 	= "PWM_P9_16";
+					enabled		= <1>;
+					duty		= <0>;
+					status 		= "okay";
+				};
 			};
 		};
 	};
