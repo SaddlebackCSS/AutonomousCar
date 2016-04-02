@@ -13,7 +13,7 @@
 	compatible = "ti,beaglebone", "ti,beaglebone-black";
 
 	/* identification */
-	part-number = "car_pwm_controls";
+	part-number = "CAR_CONTROLS";
 	version = "00A0";
 
 	/* state the resources this cape uses */
@@ -28,11 +28,11 @@
 	fragment@0 {
 		target = <&am33xx_pinmux>;
 		__overlay__ {
-			car_pwm_controls_pins: pinmux_pwm_controls_pins {
-				pinctrl-single,pins = <
-                                    0x048  0x6 /* P9_14 (ZCZ ball U14) | MODE 6 */
-                                    0x04c  0x6 /* P9_16 (ZCZ ball T14) | MODE 6 */
-                                >;
+			car_steering_pins: pinmux_car_steering_pins {
+				pinctrl-single,pins = <0x048  0x6>; /* P9_14 (ZCZ ball U14) | MODE 6 */
+			};
+                        car_motor_pins: pinmux_car_motor_pins {
+                                pinctrl-single,pins = <0x04c  0x6>; /* P9_16 (ZCZ ball T14) | MODE 6 */
 			};
 		};
 	};
@@ -43,22 +43,29 @@
 			car_pwm_helper {
 				compatible	= "pwm_test";
 				pinctrl-names	= "default";
-				pinctrl-0	= <&car_pwm_controls_pins>;
+				pinctrl-0	= <&car_motor_pins>;
 
-				car_motor {
-					pwms 		= <&ehrpwm1 0 20000000 1>;
-					pwm-names 	= "PWM_P9_14";
-					enabled		= <1>;
-					duty		= <0>;
-					status 		= "okay";
-				};
-			    
 				car_steering {
+					compatible	= "pwm_test";
+					pinctrl-names	= "default";
+					pinctrl-0	= <&car_steering_pins>;
+					pwms 		= <&ehrpwm1 0 20000000 1>;
+					pwm-names 	= "STEER_P9_14";
+					enabled		= <1>;      // enable plz
+					polarity        = <0>;      // 0=normal, 1=inverse
+					duty		= <0>;      // initial duty
+					status 		= "okay";   // be ok plz?
+				};
+				car_motor {
+					compatible	= "pwm_test";
+					pinctrl-names	= "default";
+					pinctrl-0	= <&car_motor_pins>;
 					pwms 		= <&ehrpwm1 1 20000000 1>;
-					pwm-names 	= "PWM_P9_16";
-					enabled		= <1>;
-					duty		= <0>;
-					status 		= "okay";
+					pwm-names 	= "MOTOR_P9_16";
+					enabled		= <1>;      // enable plz
+					polarity        = <0>;      // 0=normal, 1=inverse
+					duty		= <0>;      // initial duty
+					status 		= "okay";   // be ok plz?
 				};
 			};
 		};
