@@ -41,10 +41,6 @@
 		target = <&ocp>;
 		__overlay__ {
 			car_pwm_helper {
-				compatible	= "pwm_test";
-				pinctrl-names	= "default";
-				pinctrl-0	= <&car_motor_pins>;
-
 				car_steering {
 					compatible	= "pwm_test";
 					pinctrl-names	= "default";
