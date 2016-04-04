@@ -1,7 +1,13 @@
 /*
- * Copyright (C) 2013 CircuitCo
- * Copyright (C) 2013 Texas Instruments
- *
+ * This overlay sets up the two PWM pins on EHRPWM1 to control the steering servo
+ * and the motor ESC. This means setting the period to 20us, the polarity to positive,
+ * and enabling the pins. This must be done in an overlay since both pin on the same
+ * module MUST have the same period. This could also be done through various other
+ * methods like python, but in the end this is just a layer that hides the overlay
+ * doing the real work.
+ * 
+ * TODO - Seems like the polarity is NOT positive by default??? event though it is set here?
+ * 
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License version 2 as
  * published by the Free Software Foundation.
@@ -46,7 +52,7 @@
 					compatible	= "pwm_test";	// unknown ???
 					pinctrl-names	= "default";	// unknown ???
 					pinctrl-0	= <&car_steering_pins>;
-					pwms 		= <&ehrpwm1 0 20000000 1>;  // Module 1 at 20MHz ... unsure what last 1 is?
+					pwms 		= <&ehrpwm1 0 20000000 1>;  // Module 0 at 20MHz ... unsure what last 1 is?
 					pwm-names 	= "STEER_P9_14";
 					enabled		= <1>;      // enable plz
 					polarity        = <0>;      // 0=normal, 1=inverse
