@@ -5,6 +5,7 @@
  * module MUST have the same period. This could also be done through various other
  * methods like python, but in the end this is just a layer that hides the overlay
  * doing the real work.
+ * Reference: https://bitbucket.org/intelligentagent/replicape/src/bf08295bbb5e98ce6bff60097fe9b78d96002654/Device_tree/3.8/BB-BONE-REPLICAP-00A1.dts?at=Rev-A4&fileviewer=file-view-default
  * 
  * TODO - Seems like the polarity is NOT positive by default??? event though it is set here?
  * 
