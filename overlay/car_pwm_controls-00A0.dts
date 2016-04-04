@@ -25,14 +25,15 @@
 		"ehrpwm1A",
                 "ehrpwm1B";
 
+	// Each PWM pin is it's own node, even though they are on the same module
 	fragment@0 {
 		target = <&am33xx_pinmux>;
 		__overlay__ {
-			car_steering_pins: pinmux_car_steering_pins {
-				pinctrl-single,pins = <0x048  0x6>; /* P9_14 (ZCZ ball U14) | MODE 6 */
+			car_steering_pins: pinmux_car_steering_pins {  // STEERING PIN
+				pinctrl-single,pins = <0x048  0x6>;    /* P9_14 (ZCZ ball U14) | MODE 6 */
 			};
-                        car_motor_pins: pinmux_car_motor_pins {
-                                pinctrl-single,pins = <0x04c  0x6>; /* P9_16 (ZCZ ball T14) | MODE 6 */
+                        car_motor_pins: pinmux_car_motor_pins {      // MOTOR CONTROL PIN
+                                pinctrl-single,pins = <0x04c  0x6>;  /* P9_16 (ZCZ ball T14) | MODE 6 */
 			};
 		};
 	};
@@ -41,22 +42,22 @@
 		target = <&ocp>;
 		__overlay__ {
 			car_pwm_helper {
-				car_steering {
-					compatible	= "pwm_test";
-					pinctrl-names	= "default";
+				car_steering {		// Directory Will Be Called this
+					compatible	= "pwm_test";	// unknown ???
+					pinctrl-names	= "default";	// unknown ???
 					pinctrl-0	= <&car_steering_pins>;
-					pwms 		= <&ehrpwm1 0 20000000 1>;
+					pwms 		= <&ehrpwm1 0 20000000 1>;  // Module 1 at 20MHz ... unsure what last 1 is?
 					pwm-names 	= "STEER_P9_14";
 					enabled		= <1>;      // enable plz
 					polarity        = <0>;      // 0=normal, 1=inverse
 					duty		= <0>;      // initial duty
 					status 		= "okay";   // be ok plz?
 				};
-				car_motor {
+				car_motor {		// Directory will be called this
 					compatible	= "pwm_test";
 					pinctrl-names	= "default";
 					pinctrl-0	= <&car_motor_pins>;
-					pwms 		= <&ehrpwm1 1 20000000 1>;
+					pwms 		= <&ehrpwm1 1 20000000 1>;  // Module 1 at 20MHz ... unsure what last 1 is?
 					pwm-names 	= "MOTOR_P9_16";
 					enabled		= <1>;      // enable plz
 					polarity        = <0>;      // 0=normal, 1=inverse
