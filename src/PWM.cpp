@@ -22,8 +22,8 @@
  * For more details, see http://www.derekmolloy.ie/
  */
 
-#include "PWM.h"
-#include "util.h"
+#include "../include/PWM.h"
+#include "../include/util.h"
 #include <cstdlib>
 
 namespace exploringBB {
@@ -31,7 +31,7 @@ namespace exploringBB {
 PWM::PWM(string pinName) {
 	this->name = pinName;
 	this->path = PWM_PATH + this->name + "/";
-	this->analogFrequency = 100000;
+	this->analogFrequency = 50;
 	this->analogMax = 3.3;
 }
 

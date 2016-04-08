@@ -1,2 +1,2 @@
 #!/bin/bash
-g++ main.cpp GPIO.cpp -o test -pthread
+g++ main.cpp GPIO.cpp PWM.cpp util.cpp -o test -pthread
