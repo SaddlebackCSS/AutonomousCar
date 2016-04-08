@@ -1,10 +1,15 @@
 /*
  * This overlay sets up the two PWM pins on EHRPWM1 to control the steering servo
- * and the motor ESC. This means setting the period to 20us, the polarity to positive,
+ * and the motor ESC, as well as the GPIO pin for the ESC power switch.
+ * This means setting the period to 20us, the polarity to positive,
  * and enabling the pins. This must be done in an overlay since both pin on the same
  * module MUST have the same period. This could also be done through various other
  * methods like python, but in the end this is just a layer that hides the overlay
  * doing the real work.
+ * 
+ * Steering pin will appear in /sys/devices/ocp.3/car_steering.14
+ * Motor pin will appear in /sys/devices/ocp.3/car_motor.16
+ * Use the GPIO as normal with GPIO class
  * 
  * Reference: https://bitbucket.org/intelligentagent/replicape/src/bf08295bbb5e98ce6bff60097fe9b78d96002654/Device_tree/3.8/BB-BONE-REPLICAP-00A1.dts?at=Rev-A4&fileviewer=file-view-default
  * Another Breif Ref: http://free-electrons.com/kerneldoc/latest/devicetree/bindings/pinctrl/pinctrl-bindings.txt
@@ -31,24 +36,26 @@
         /* the pin header uses */
         "P9.14",        /* pwm: ehrpwm1A - STEERING */
         "P9.16",        /* pwm: ehrpwm1B - MOTOR */
+        "P9.12",	/* gpio1_28 - ESC Switch */
         /* the hardware IP uses */
         "ehrpwm1A",
-        "ehrpwm1B";
+        "ehrpwm1B",
+        "gpio1_28";
 
     // Each PWM pin is it's own node, even though they are on the same module
     fragment@0 {
         target = <&am33xx_pinmux>;
         __overlay__ {
-			esc_on_pins: pinmux_esc_on_pins {        // ESC POWER ON PIN FOR RELAY
-			    pinctrl-single,pins = <0x078 0x07>;  // P9_12; PINS$30; GPIO0_60 = 60; Output=Mode7; pulldown
-				/* OUTPUT  GPIO(mode7): 0x07 pulldown, 0x17 pullup, 0x?f no pullup/down */
-			};
-            car_steering_pins: pinmux_car_steering_pins {  // STEERING PIN
-                pinctrl-single,pins = <0x048  0x6>;        // P9_14 (ZCZ ball U14) | MODE 6
-            };
-            car_motor_pins: pinmux_car_motor_pins {    // MOTOR CONTROL PIN
-                pinctrl-single,pins = <0x04c  0x6>;    // P9_16 (ZCZ ball T14) | MODE 6 
-            };
+        	esc_on_pins: pinmux_esc_on_pins {        // ESC POWER ON PIN FOR RELAY
+	    		pinctrl-single,pins = <0x078 0x07>;  // P9_12; PINS$30; GPIO0_60 = 60; Output=Mode7; pulldown
+			/* OUTPUT  GPIO(mode7): 0x07 pulldown, 0x17 pullup, 0x?f no pullup/down */
+		};
+            	car_steering_pins: pinmux_car_steering_pins {  // STEERING PIN
+                	pinctrl-single,pins = <0x048  0x6>;        // P9_14 (ZCZ ball U14) | MODE 6
+            	};
+            	car_motor_pins: pinmux_car_motor_pins {    // MOTOR CONTROL PIN
+                	pinctrl-single,pins = <0x04c  0x6>;    // P9_16 (ZCZ ball T14) | MODE 6 
+            	};
         };
     };
 
@@ -65,10 +72,9 @@
                 compatible    = "pwm_test";              // unknown ???
                 pinctrl-names = "default";               // unknown ???
                 pinctrl-0     = <&car_steering_pins>;    // unknown ???
-                pwms          = <&ehrpwm1 0 20000000 0>; // Module 0 at 20MHz ... unsure what last 1 is maybe polarity??
+                pwms          = <&ehrpwm1 0 20000000 0>; // Module 0 at 20MHz and polarity 0
                 pwm-names     = "STEER_P9_14";           // unknown ???
                 enabled       = <1>;      // enable plz
-                //polarity      = <0>;      // 0=normal, 1=inverse
                 duty          = <0>;      // initial duty
                 status        = "okay";   // be ok plz?
             };
@@ -76,10 +82,9 @@
                 compatible    = "pwm_test";              // unknown ???
                 pinctrl-names = "default";               // unknown ???
                 pinctrl-0     = <&car_motor_pins>;       // unknown ???
-                pwms          = <&ehrpwm1 1 20000000 0>; // Module 1 at 20MHz ... unsure what last 1 is?
+                pwms          = <&ehrpwm1 1 20000000 0>; // Module 1 at 20MHz and polarity 0
                 pwm-names     = "MOTOR_P9_16";           // unknown ???
                 enabled       = <1>;     // enable plz
-                //polarity      = <0>;     // 0=normal, 1=inverse
                 duty          = <0>;     // initial duty
                 status        = "okay";  // be ok plz?
             };
