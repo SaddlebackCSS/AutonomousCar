@@ -31,6 +31,7 @@ int main()
 	esc_switch.setValue(HIGH);
 	usleep(2000000); // wait for 2 seconds
 	
+	// Car steering / motor control test.
 	for(int i = 0; i < 3; i++){
 		car_steering.setDutyCycle(RIGHT_MAX); // turn wheels all the way right
 		usleep(500000); // wait 1/2 second
@@ -39,7 +40,8 @@ int main()
 		// Go forward
 		car_motor.setDutyCycle((unsigned int)(1700000));
 		usleep(500000);
-		// cease 
+		
+		// brake
 		car_motor.setDutyCycle((unsigned int)(CENTER - 300000));
 		
 		car_steering.setDutyCycle(LEFT_MAX); // turn wheels all the way left
