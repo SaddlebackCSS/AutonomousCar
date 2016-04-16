@@ -38,3 +38,18 @@ Will post more later once finals are over but I wanted to start the repo. Most i
     * Closed Loop Feedback
 
 Obviously what you learn is really up to what you are interested in. If you could care less about hardware but want to jsut play with computer vision or someother navigation method then thats ok! If we want we could even make more than one car, and there is also a battle bot competition if some people are more interested in that.
+
+# Find IP of beaglebone on Windows at Saddleback
+- Open CMD
+- Type "nslookup beaglebone". The output will look something like: 
+
+```
+Server:  dns1.saddleback.edu
+Address:  10.151.253.251
+
+Non-authoritative answer:
+Name:  beaglebone.saddleback.edu
+Address:  10.151.12.96
+```
+
+- Use the address associated with beaglebone.saddleback.edu with ssh on Linux/OSX or in PUTTY(installed on school computers already)
