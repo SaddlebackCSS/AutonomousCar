@@ -39,13 +39,6 @@ Will post more later once finals are over but I wanted to start the repo. Most i
 
 Obviously what you learn is really up to what you are interested in. If you could care less about hardware but want to jsut play with computer vision or someother navigation method then thats ok! If we want we could even make more than one car, and there is also a battle bot competition if some people are more interested in that.
 
-# Connecting the Beaglebone to Wifi
-  add AP to `/etc/network/interfaces`
-  Bring up wifi with `ifup wlan0`
-  Bring Down with    `ifdown wlan0`
-  
-  [Adafruit Reference](https://learn.adafruit.com/setting-up-wifi-with-beaglebone-black/configuration)
-
 # Find IP of beaglebone on Windows at Saddleback
 - Open CMD
 - Type "nslookup beaglebone". The output will look something like: 
