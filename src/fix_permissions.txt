@@ -1,0 +1,2 @@
+chown root <executable>
+chmod 4755 <executable>

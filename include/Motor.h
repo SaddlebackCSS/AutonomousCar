@@ -24,59 +24,28 @@
 
 #ifndef MOTOR_H_
 #define MOTOR_H_
-#include<string>
-using std::string;
+#include "GPIO.h"
+#include "PWM.h"
 
-#define MOTOR_PATH "/sys/devices/ocp.3/"
-#define MOTOR_PERIOD "period"
-#define MOTOR_DUTY "duty"
-#define MOTOR_POLARITY "polarity"
-#define MOTOR_RUN "run"
-
-namespace exploringBB {
+namespace exploringBB{
 
 /**
  * @class Motor
  * @brief A class to control a basic PWM output -- you must know the exact sysfs filename
  * for the PWM output.
  */
-class Motor {
+class Motor : protected PWM {
 public:
-	enum POLARITY{ ACTIVE_HIGH=0, ACTIVE_LOW=1 };
+	Motor();
+        void move(int percent);
+        void brake();
 
+	~Motor();
 private:
-	string name, path;
-	float analogFrequency;  //defaults to 100,000 Hz
-	float analogMax;        //defaults to 3.3V
-
-public:
-	Motor(string pinName);
-
-	virtual int setPeriod(unsigned int period_ns);
-	virtual unsigned int getPeriod();
-	virtual int setFrequency(float frequency_hz);
-	virtual float getFrequency();
-	virtual int setDutyCycle(unsigned int duration_ns);
-	virtual int setDutyCycle(float percentage);
-	virtual unsigned int getDutyCycle();
-	virtual float getDutyCyclePercent();
-
-	virtual int setPolarity(PWM::POLARITY);
-	virtual void invertPolarity();
-	virtual Motor::POLARITY getPolarity();
-
-	virtual void setAnalogFrequency(float frequency_hz) { this->analogFrequency = frequency_hz; }
-	virtual int calibrateAnalogMax(float analogMax); //must be between 3.2 and 3.4
-	virtual int analogWrite(float voltage);
-
-	virtual int run();
-	virtual bool isRunning();
-	virtual int stop();
-
-	virtual ~Motor();
-private:
-	float period_nsToFrequency(unsigned int);
-	unsigned int frequencyToPeriod_ns(float);
+    void init();
+    GPIO esc_switch;
+    const unsigned int PWM_MAX;
+    const unsigned int PWM_MIN;
 };
 
 } /* namespace exploringBB */
