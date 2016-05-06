@@ -25,13 +25,27 @@ void Motor::init(){
 
 void Motor::move(float percent)
 {
-    if(percent >= -1 && percent <= 1){
-        unsigned int CENTER = 1500000;
-        unsigned int SCALE = 500000;
-        unsigned int duty = (unsigned int)(CENTER + (SCALE * percent));
+	// If the value is invalid DO NOTHING
+	if( percent < -100 || percent > 100){ return; }
+	
+	unsigned int CENTER = 1500000;
+    unsigned int SCALE  = 500000;
+	unsigned int duty = (unsigned int)(CENTER + (SCALE * percent));
+	
+	if( percent < 0 && getDutyCycle() >= CENTER ) {
+		std::cout << "Going reverse from a forward speed!" << std::endl;
+		// double tap to go backwards from a >= 0
+		setDutyCycle(duty);
+		setDutyCycle(CENTER);
+		setDutyCycle(duty);
+		
         std::cout << "duty : " << duty << std::endl;
         setDutyCycle(duty);
-    }
+	}
+	else {
+		std::cout << "duty : " << duty << std::endl;
+        setDutyCycle(duty);
+	}
 }
 
 Motor::~Motor() {
