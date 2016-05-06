@@ -37,7 +37,7 @@ namespace exploringBB{
 class Motor : public PWM {
 public:
 	Motor();
-        void move(float percent);
+        void move(int percent);
         void brake();
 
 	~Motor();
