@@ -9,9 +9,9 @@ int main()
 {
     cout << "trying to make a motor\n";
     Motor carMotor;
-    carMotor.move(-0.25f);
+    carMotor.move(25);
     usleep(2000000);
-    carMotor.move(0.0f);
+    carMotor.move(0);
     cout << "done waiting... in main\n";
 	return 0;
 }
