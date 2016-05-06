@@ -28,29 +28,33 @@ void Motor::init(){
 void Motor::move(int percent)
 {
 	// If the value is invalid DO NOTHING
-	if( percent < -100 || percent > 100){ return; }
-	
-	unsigned int CENTER = 1500000;
-    unsigned int SCALE  = 500000;
-	unsigned int duty = (unsigned int)(CENTER + (SCALE * percent / 100.0));
-	
-	if( percent < 0 && getDutyCycle() >= CENTER ) {
-		std::cout << "Going reverse from a forward speed!" << std::endl;
-		// double tap to go backwards from a >= 0
-		setDutyCycle(duty);
-		setDutyCycle(CENTER);
-		setDutyCycle(duty);
+	if( percent >= -100 && percent <= 100 ) {
+		unsigned int CENTER = 1500000;
+	    unsigned int SCALE  = 500000;
+		unsigned int duty   = (unsigned int)(CENTER + (SCALE * percent / 100.0));
+		
+		std::cout << "CURRENT DUTY: " << getDutyCycle() << std::endl;
+		std::cout << "DESIRED DUTY: " << duty << std::endl;
 
-        std::cout << "duty : " << duty << std::endl;
-        setDutyCycle(duty);
-	}
-	else {
-		std::cout << "duty : " << duty << std::endl;
-        setDutyCycle(duty);
+		if( percent < 0 && getDutyCycle() >= CENTER ) {
+			std::cout << "Going reverse from a forward speed!" << std::endl;
+			// double tap to go backwards from a >= 0
+			setDutyCycle(duty);
+			setDutyCycle(CENTER);
+			setDutyCycle(duty);
+
+	        std::cout << "duty : " << duty << std::endl;
+	        setDutyCycle(duty);
+		}
+		else {
+			std::cout << "duty : " << duty << std::endl;
+	        setDutyCycle(duty);
+		}
 	}
 }
 
 Motor::~Motor() {
+	setDutyCycle(1500000);
     esc_switch.setValue(LOW);
 }
 
