@@ -32,7 +32,7 @@ void Motor::move(int percent)
 	
 	unsigned int CENTER = 1500000;
     unsigned int SCALE  = 500000;
-	unsigned int duty = (unsigned int)(CENTER + (SCALE * percent));
+	unsigned int duty = (unsigned int)(CENTER + (SCALE * percent / 100.0));
 	
 	if( percent < 0 && getDutyCycle() >= CENTER ) {
 		std::cout << "Going reverse from a forward speed!" << std::endl;
