@@ -1,9 +1,9 @@
-CFLAGS=-c -Wall -g
+CFLAGS=-c -Wall -g 
 
 all: car
 
 car: main.o GPIO.o Motor.o util.o PWM.o
-	g++ main.o GPIO.o PWM.o util.o -pthread -o test
+	g++ main.o GPIO.o PWM.o util.o -lpthread -o test
 	
 main.o: main.cpp
 	g++ $(CFLAGS) main.cpp

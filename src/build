@@ -1,2 +1,2 @@
 #!/bin/bash
-g++ -g main.cpp GPIO.cpp Motor.cpp util.cpp PWM.cpp -o test -pthread -Wall 
+g++ -g main.cpp PWM.cpp GPIO.cpp Motor.cpp util.cpp  -o test -pthread -Wall 

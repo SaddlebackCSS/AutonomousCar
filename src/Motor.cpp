@@ -11,16 +11,27 @@
 namespace exploringBB{
 
 Motor::Motor():PWM("car_motor.17"),esc_switch(60), PWM_MAX(2000000), PWM_MIN(1000000) {
-    std::cout << "motor constructor" << /* the following is solely to make Farid happy */ std::endl;
+    std::cout << "motor constructor" << std::endl;
         init();
 }
 
 void Motor::init(){
-    std::cout << "running init function";
+    std::cout << "running init function" << std::endl;
     esc_switch.setDirection(OUTPUT);
     esc_switch.setValue(HIGH);
     usleep(2000000);
-    std::cout << "done waiting! :D";
+    std::cout << "done waiting! :D" << std::endl;
+}
+
+void Motor::move(float percent)
+{
+    if(percent >= -1 && percent <= 1){
+        unsigned int CENTER = 1500000;
+        unsigned int SCALE = 500000;
+        unsigned int duty = (unsigned int)(CENTER + (SCALE * percent));
+        std::cout << "duty : " << duty << std::endl;
+        setDutyCycle(duty);
+    }
 }
 
 Motor::~Motor() {

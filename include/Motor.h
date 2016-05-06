@@ -34,10 +34,10 @@ namespace exploringBB{
  * @brief A class to control a basic PWM output -- you must know the exact sysfs filename
  * for the PWM output.
  */
-class Motor : protected PWM {
+class Motor : public PWM {
 public:
 	Motor();
-        void move(int percent);
+        void move(float percent);
         void brake();
 
 	~Motor();

@@ -8,8 +8,10 @@ using namespace std;
 int main() 
 {
     cout << "trying to make a motor\n";
-    Motor carMotor();
-    usleep(5000000);
+    Motor carMotor;
+    carMotor.move(-0.25f);
+    usleep(2000000);
+    carMotor.move(0.0f);
     cout << "done waiting... in main\n";
 	return 0;
 }
