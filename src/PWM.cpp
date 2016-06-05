@@ -29,11 +29,11 @@
 namespace exploringBB {
 
 PWM::PWM(string pinName) {
-    std::cout << "I'm alive!\n"; 
 	this->name = pinName;
 	this->path = PWM_PATH + this->name + "/";
 	this->analogFrequency = 50;
 	this->analogMax = 3.3;
+        std::cout << "PWM initialized\n";
 }
 
 int PWM::setPeriod(unsigned int period_ns){

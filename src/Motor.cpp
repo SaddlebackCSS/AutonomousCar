@@ -19,13 +19,13 @@ namespace exploringBB
 
     void Motor::init()
     {
-        std::cout << "running init function" << std::endl;
+        std::cout << "initializing esc switch for motor..." << std::endl;
         unsigned int CENTER = 1500000;
         setDutyCycle(CENTER);
         esc_switch.setDirection(OUTPUT);
         esc_switch.setValue(HIGH);
         usleep(2000000);
-        std::cout << "done waiting! :D" << std::endl;
+        std::cout << "esc switch initialized" << std::endl;
     }
 
     void Motor::move(int percent)
@@ -43,6 +43,7 @@ namespace exploringBB
 
     Motor::~Motor() 
     {
+        setDutyCycle(CENTER);
         esc_switch.setValue(LOW);
     }
 
