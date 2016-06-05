@@ -8,6 +8,7 @@
 #include "../include/util.h"
 #include <cstdlib>
 #include <iostream>
+#include <cmath>
 namespace exploringBB
 {
 
@@ -35,7 +36,7 @@ namespace exploringBB
         
         unsigned int CENTER = 1500000;
         unsigned int SCALE  = 500000;
-        unsigned int duty = (unsigned int)(CENTER + (SCALE * percent / 100.0));
+        unsigned int duty = (unsigned int)abs((CENTER + (SCALE * percent / 100.0)));
         
         if( percent < 0 && getDutyCycle() >= CENTER ) 
         {
