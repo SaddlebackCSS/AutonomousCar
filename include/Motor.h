@@ -38,7 +38,6 @@ class Motor : public PWM {
 public:
 	Motor();
         void move(int percent);
-        void brake();
 
 	~Motor();
 private:
