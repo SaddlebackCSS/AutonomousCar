@@ -19,8 +19,10 @@ namespace exploringBB
 
     void Steering::init()
     {
+        std::cout << "setting wheels to center...\n";
         // set wheels to center
         setDutyCycle(CENTER);
+        std::cout << "steering module inititalized.\n";
     }
 
     void Steering::steer(int percent)
@@ -28,7 +30,14 @@ namespace exploringBB
         // If value is out of bounds, do nothing.
         if( percent < -100 || percent > 100) { return; }
 
+        unsigned int SCALE = 269000;
+        unsigned int duty = static_cast<unsigned int>(CENTER + (SCALE * (percent / 100.0)));
 
+        std::cout << "steering duty: " << duty << std::endl;
+        if(duty >= RIGHT_MAX && duty <= LEFT_MAX)
+        {
+            setDutyCycle(duty);
+        }
     }
 
     Steering::~Steering() 

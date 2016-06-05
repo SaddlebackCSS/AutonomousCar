@@ -12,6 +12,10 @@ int main()
     Motor carMotor;
     Steering carSteering;
     usleep(2000000);
+    carSteering.steer(100);
+    usleep(2000000);
+    carSteering.steer(-100);
+    usleep(2000000);
     cout << "done waiting... in main\n";
     return 0;
 }
