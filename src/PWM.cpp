@@ -25,10 +25,11 @@
 #include "../include/PWM.h"
 #include "../include/util.h"
 #include <cstdlib>
-
+#include <iostream>
 namespace exploringBB {
 
 PWM::PWM(string pinName) {
+    std::cout << "I'm alive!\n"; 
 	this->name = pinName;
 	this->path = PWM_PATH + this->name + "/";
 	this->analogFrequency = 50;
@@ -63,14 +64,6 @@ float PWM::getFrequency(){
 
 int PWM::setDutyCycle(unsigned int duty_ns){
 	return write(this->path, PWM_DUTY, duty_ns);
-}
-
-int PWM::setDutyCycle(float percentage){
-	if ((percentage>100.0f)||(percentage<0.0f)) return -1;
-	unsigned int period_ns = this->getPeriod();
-	float duty_ns = period_ns * (percentage/100.0f);
-	this->setDutyCycle((unsigned int) duty_ns );
-	return 0;
 }
 
 unsigned int PWM::getDutyCycle(){

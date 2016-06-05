@@ -52,28 +52,27 @@ private:
 public:
 	PWM(string pinName);
 
-	virtual int setPeriod(unsigned int period_ns);
-	virtual unsigned int getPeriod();
-	virtual int setFrequency(float frequency_hz);
-	virtual float getFrequency();
-	virtual int setDutyCycle(unsigned int duration_ns);
-	virtual int setDutyCycle(float percentage);
-	virtual unsigned int getDutyCycle();
-	virtual float getDutyCyclePercent();
+	int setPeriod(unsigned int period_ns);
+	unsigned int getPeriod();
+	int setFrequency(float frequency_hz);
+	float getFrequency();
+	int setDutyCycle(unsigned int duration_ns);
+	unsigned int getDutyCycle();
+	float getDutyCyclePercent();
 
-	virtual int setPolarity(PWM::POLARITY);
-	virtual void invertPolarity();
-	virtual PWM::POLARITY getPolarity();
+	int setPolarity(PWM::POLARITY);
+	void invertPolarity();
+	PWM::POLARITY getPolarity();
 
-	virtual void setAnalogFrequency(float frequency_hz) { this->analogFrequency = frequency_hz; }
-	virtual int calibrateAnalogMax(float analogMax); //must be between 3.2 and 3.4
-	virtual int analogWrite(float voltage);
+	void setAnalogFrequency(float frequency_hz) { this->analogFrequency = frequency_hz; }
+	int calibrateAnalogMax(float analogMax); //must be between 3.2 and 3.4
+	int analogWrite(float voltage);
 
-	virtual int run();
-	virtual bool isRunning();
-	virtual int stop();
+	int run();
+	bool isRunning();
+	int stop();
 
-	virtual ~PWM();
+	~PWM();
 private:
 	float period_nsToFrequency(unsigned int);
 	unsigned int frequencyToPeriod_ns(float);
