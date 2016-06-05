@@ -60,5 +60,4 @@ namespace exploringBB
         esc_switch.setValue(LOW);
     }
 
-
 } /* namespace exploringBB */
