@@ -8,7 +8,6 @@
 #include "../include/util.h"
 #include <cstdlib>
 #include <iostream>
-#include <cmath>
 namespace exploringBB
 {
 
@@ -36,14 +35,17 @@ namespace exploringBB
         
         unsigned int CENTER = 1500000;
         unsigned int SCALE  = 500000;
-        unsigned int duty = (unsigned int)abs((CENTER + (SCALE * percent / 100.0)));
+        unsigned int duty = static_cast<unsigned int>(CENTER + (SCALE * (percent / 100.0)));
+        std::cout << duty;
         
         if( percent < 0 && getDutyCycle() >= CENTER ) 
         {
             std::cout << "Going reverse from a forward speed!" << std::endl;
             // double tap to go backwards from a >= 0
             setDutyCycle(duty);
+            usleep(50000);
             setDutyCycle(CENTER);
+            usleep(50000);
             setDutyCycle(duty);
 
             std::cout << "duty : " << duty << std::endl;
