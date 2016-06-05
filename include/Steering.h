@@ -22,6 +22,7 @@ namespace exploringBB
         void init();
         const unsigned int RIGHT_MAX;
         const unsigned int LEFT_MAX;
+        const unsigned int CENTER;
     };
 
 } /* namespace exploringBB */
