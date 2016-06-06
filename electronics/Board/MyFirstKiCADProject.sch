@@ -1,0 +1,193 @@
+EESchema Schematic File Version 2
+LIBS:power
+LIBS:device
+LIBS:transistors
+LIBS:conn
+LIBS:linear
+LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:atmel
+LIBS:contrib
+LIBS:valves
+LIBS:gtb
+LIBS:MyFirstKiCADProject-cache
+EELAYER 25 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L R R3
+U 1 1 57549FCD
+P 6250 3400
+F 0 "R3" V 6350 3400 50  0000 C CNN
+F 1 "R" V 6250 3400 50  0000 C CNN
+F 2 "" V 6180 3400 50  0000 C CNN
+F 3 "" H 6250 3400 50  0000 C CNN
+	1    6250 3400
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R2
+U 1 1 5754A017
+P 6250 3100
+F 0 "R2" V 6330 3100 50  0000 C CNN
+F 1 "R" V 6250 3100 50  0000 C CNN
+F 2 "" V 6180 3100 50  0000 C CNN
+F 3 "" H 6250 3100 50  0000 C CNN
+	1    6250 3100
+	1    0    0    -1  
+$EndComp
+$Comp
+L MIC29312 U1
+U 1 1 5754A54D
+P 5850 3250
+F 0 "U1" H 5950 3050 60  0000 C CNN
+F 1 "MIC29312" H 5800 3750 60  0000 C CNN
+F 2 "" H 5850 3250 60  0000 C CNN
+F 3 "" H 5850 3250 60  0000 C CNN
+	1    5850 3250
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR2
+U 1 1 5754A5D9
+P 6250 3550
+F 0 "#PWR2" H 6250 3300 50  0001 C CNN
+F 1 "GND" H 6250 3400 50  0000 C CNN
+F 2 "" H 6250 3550 50  0000 C CNN
+F 3 "" H 6250 3550 50  0000 C CNN
+	1    6250 3550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6250 2950 6650 2950
+Wire Wire Line
+	6500 2950 6500 3100
+$Comp
+L CP C2
+U 1 1 5754A647
+P 6500 3250
+F 0 "C2" H 6525 3350 50  0000 L CNN
+F 1 "CP" H 6525 3150 50  0000 L CNN
+F 2 "" H 6538 3100 50  0000 C CNN
+F 3 "" H 6500 3250 50  0000 C CNN
+	1    6500 3250
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR3
+U 1 1 5754A69C
+P 6500 3550
+F 0 "#PWR3" H 6500 3300 50  0001 C CNN
+F 1 "GND" H 6500 3400 50  0000 C CNN
+F 2 "" H 6500 3550 50  0000 C CNN
+F 3 "" H 6500 3550 50  0000 C CNN
+	1    6500 3550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6500 3400 6500 3550
+Connection ~ 6500 2950
+Connection ~ 6650 2950
+Text Notes 6650 2950 0    60   ~ 0
+Vout
+$Comp
+L R R1
+U 1 1 5754A8BE
+P 5350 3100
+F 0 "R1" V 5430 3100 50  0000 C CNN
+F 1 "R" V 5350 3100 50  0000 C CNN
+F 2 "" V 5280 3100 50  0000 C CNN
+F 3 "" H 5350 3100 50  0000 C CNN
+	1    5350 3100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5350 2950 5100 2950
+Wire Wire Line
+	4950 3250 5350 3250
+Connection ~ 5100 2950
+Connection ~ 5100 3250
+Connection ~ 6250 2950
+Connection ~ 6250 3250
+Connection ~ 5350 2950
+Connection ~ 5350 3250
+Wire Wire Line
+	5100 3250 5100 3400
+$Comp
+L CP C1
+U 1 1 5754A94D
+P 5100 3550
+F 0 "C1" H 5125 3650 50  0000 L CNN
+F 1 "CP" H 5125 3450 50  0000 L CNN
+F 2 "" H 5138 3400 50  0000 C CNN
+F 3 "" H 5100 3550 50  0000 C CNN
+	1    5100 3550
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR1
+U 1 1 5754A981
+P 5100 3700
+F 0 "#PWR1" H 5100 3450 50  0001 C CNN
+F 1 "GND" H 5100 3550 50  0000 C CNN
+F 2 "" H 5100 3700 50  0000 C CNN
+F 3 "" H 5100 3700 50  0000 C CNN
+	1    5100 3700
+	1    0    0    -1  
+$EndComp
+$Comp
+L SPST SW1
+U 1 1 5754A9A1
+P 4450 3250
+F 0 "SW1" H 4450 3350 50  0000 C CNN
+F 1 "SPST" H 4450 3150 50  0000 C CNN
+F 2 "" H 4450 3250 50  0000 C CNN
+F 3 "" H 4450 3250 50  0000 C CNN
+	1    4450 3250
+	1    0    0    -1  
+$EndComp
+$Comp
+L Battery BT1
+U 1 1 5754A9DF
+P 3800 3250
+F 0 "BT1" H 3900 3300 50  0000 L CNN
+F 1 "Battery" H 3900 3200 50  0000 L CNN
+F 2 "" V 3800 3290 50  0000 C CNN
+F 3 "" V 3800 3290 50  0000 C CNN
+	1    3800 3250
+	0    1    1    0   
+$EndComp
+Text Notes 4900 2900 0    60   ~ 0
+on/off
+Connection ~ 3650 3250
+$EndSCHEMATC
