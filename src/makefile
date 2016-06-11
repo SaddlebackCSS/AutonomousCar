@@ -3,7 +3,7 @@ FLAGS=-c -pthread -Wall -g
 all: car
 
 car: main.o GPIO.o Motor.o Steering.o util.o PWM.o
-	g++ main.o Motor.o Steering.o GPIO.o PWM.o util.o -lpthread -g -o test
+	g++ main.o Motor.o Steering.o GPIO.o PWM.o util.o -lpthread -lprussdrv -g -o test
 	
 GPIO.o: GPIO.cpp
 	g++ $(FLAGS) GPIO.cpp
