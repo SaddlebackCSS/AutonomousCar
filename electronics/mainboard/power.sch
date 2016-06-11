@@ -28,13 +28,12 @@ LIBS:opto
 LIBS:atmel
 LIBS:contrib
 LIBS:valves
-LIBS:gtb
-LIBS:MyFirstKiCADProject-cache
+LIBS:mainboard-cache
 EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 1 1
+Sheet 2 2
 Title ""
 Date ""
 Rev ""

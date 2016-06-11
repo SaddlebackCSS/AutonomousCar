@@ -28,6 +28,7 @@ LIBS:opto
 LIBS:atmel
 LIBS:contrib
 LIBS:valves
+LIBS:mainboard-cache
 EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
@@ -43,7 +44,7 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Sheet
-S 1400 1400 2050 1750
+S 2000 1600 2050 1750
 U 57541CB2
 F0 "power supply" 79
 F1 "power.sch" 79
