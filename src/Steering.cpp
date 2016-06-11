@@ -1,7 +1,5 @@
 /*
- * Steering.cpp  Created on: 29 Apr 2016
- * Copyright (c) 2016 yo momma's house 
- * happy 2nd birthday, PWM.cpp
+ * Steering.cpp  Created on: 5 June 2016 
  */
 
 #include "../include/Steering.h"

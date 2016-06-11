@@ -13,7 +13,6 @@ namespace exploringBB
 
     Motor::Motor():PWM("car_motor.17"),esc_switch(60), PWM_MAX(2000000), PWM_MIN(1000000), CENTER(1500000) 
     {
-        std::cout << "motor constructor" << std::endl;
         init();
     }
 

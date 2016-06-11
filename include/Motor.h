@@ -45,6 +45,7 @@ private:
     GPIO esc_switch;
     const unsigned int PWM_MAX;
     const unsigned int PWM_MIN;
+    const unsigned int CENTER;
 };
 
 } /* namespace exploringBB */
