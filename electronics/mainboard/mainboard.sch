@@ -28,6 +28,7 @@ LIBS:opto
 LIBS:atmel
 LIBS:contrib
 LIBS:valves
+LIBS:autoCar
 LIBS:mainboard-cache
 EELAYER 25 0
 EELAYER END
@@ -44,9 +45,11 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Sheet
-S 2000 1600 2050 1750
+S 1300 1050 2050 1750
 U 57541CB2
 F0 "power supply" 79
 F1 "power.sch" 79
+F2 "5V" I R 3350 1500 60 
+F3 "GND" I R 3350 2100 60 
 $EndSheet
 $EndSCHEMATC

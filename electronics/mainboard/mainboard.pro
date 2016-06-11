@@ -1,4 +1,4 @@
-update=Sat 11 Jun 2016 06:57:58 AM PDT
+update=Sat 11 Jun 2016 09:03:39 AM PDT
 version=1
 last_client=kicad
 [pcbnew]
@@ -56,5 +56,6 @@ LibName26=opto
 LibName27=atmel
 LibName28=contrib
 LibName29=valves
+LibName30=/home/theslat/working/AutonomousCar/electronics/autoCar
 [general]
 version=1

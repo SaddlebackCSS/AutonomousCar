@@ -1,0 +1,8 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP MIC29310
+D 3A Fast-Response LDO Regulator
+K Power regulator LDO
+$ENDCMP
+#
+#End Doc Library
