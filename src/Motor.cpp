@@ -11,19 +11,19 @@
 namespace exploringBB
 {
 
-    Motor::Motor():PWM("car_motor.17"),esc_switch(60), PWM_MAX(2000000), PWM_MIN(1000000), CENTER(1500000) 
+    Motor::Motor():PWM("car_motor.14"),esc_switch(60), PWM_MAX(2000000), PWM_MIN(1000000), CENTER(1500000) 
     {
         init();
     }
 
     void Motor::init()
     {
-        std::cout << "initializing esc switch for motor..." << std::endl;
+        //std::cout << "initializing esc switch for motor..." << std::endl;
         setDutyCycle(CENTER);
         esc_switch.setDirection(OUTPUT);
         esc_switch.setValue(HIGH);
         usleep(2000000);
-        std::cout << "esc switch initialized" << std::endl;
+        //std::cout << "esc switch initialized" << std::endl;
     }
 
     void Motor::move(int percent)
@@ -34,7 +34,7 @@ namespace exploringBB
         unsigned int SCALE  = 500000;
         unsigned int duty = static_cast<unsigned int>(CENTER + (SCALE * (percent / 100.0)));
         
-        std::cout << "duty : " << duty << std::endl;
+        //std::cout << "duty : " << duty << std::endl;
         setDutyCycle(duty);
     }
 

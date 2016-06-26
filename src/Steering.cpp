@@ -9,7 +9,7 @@
 namespace exploringBB
 {
 
-    Steering::Steering():PWM("car_steering.16"), RIGHT_MAX(1202000), LEFT_MAX(1740000), CENTER(1471000)
+    Steering::Steering():PWM("car_steering.13"), RIGHT_MAX(1202000), LEFT_MAX(1740000), CENTER(1471000)
     {
         // run initialization
         init();
