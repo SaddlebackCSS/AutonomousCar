@@ -1,0 +1,266 @@
+EESchema Schematic File Version 2
+LIBS:power
+LIBS:device
+LIBS:transistors
+LIBS:conn
+LIBS:linear
+LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:atmel
+LIBS:contrib
+LIBS:valves
+LIBS:autoCar
+LIBS:mainboard-cache
+EELAYER 25 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 2 2
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L R R3
+U 1 1 57549FCD
+P 6750 3400
+F 0 "R3" V 6850 3400 50  0000 C CNN
+F 1 "33K" V 6750 3400 50  0000 C CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" V 6680 3400 50  0001 C CNN
+F 3 "" H 6750 3400 50  0000 C CNN
+	1    6750 3400
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R2
+U 1 1 5754A017
+P 6750 3100
+F 0 "R2" V 6830 3100 50  0000 C CNN
+F 1 "100K" V 6750 3100 50  0000 C CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" V 6680 3100 50  0001 C CNN
+F 3 "" H 6750 3100 50  0000 C CNN
+	1    6750 3100
+	1    0    0    -1  
+$EndComp
+$Comp
+L MIC29310 U1
+U 1 1 5754A54D
+P 6100 3050
+F 0 "U1" H 6400 2700 60  0000 C CNN
+F 1 "MIC29312" H 6100 3350 60  0000 C CNN
+F 2 "TO_SOT_Packages_SMD:TO-263-5Lead" H 6050 2000 60  0000 C CNN
+F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/mic29310.pdf" H 6100 1900 60  0000 C CNN
+	1    6100 3050
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR5
+U 1 1 5754A5D9
+P 6750 3700
+F 0 "#PWR5" H 6750 3450 50  0001 C CNN
+F 1 "GND" H 6750 3550 50  0000 C CNN
+F 2 "" H 6750 3700 50  0000 C CNN
+F 3 "" H 6750 3700 50  0000 C CNN
+	1    6750 3700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6650 2950 8050 2950
+Wire Wire Line
+	7000 2950 7000 3100
+$Comp
+L CP C2
+U 1 1 5754A647
+P 7000 3250
+F 0 "C2" H 7025 3350 50  0000 L CNN
+F 1 "22uF" H 7025 3150 50  0000 L CNN
+F 2 "Capacitors_SMD:c_elec_5x5.3" H 7038 3100 50  0001 C CNN
+F 3 "" H 7000 3250 50  0000 C CNN
+	1    7000 3250
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR6
+U 1 1 5754A69C
+P 7000 3700
+F 0 "#PWR6" H 7000 3450 50  0001 C CNN
+F 1 "GND" H 7000 3550 50  0000 C CNN
+F 2 "" H 7000 3700 50  0000 C CNN
+F 3 "" H 7000 3700 50  0000 C CNN
+	1    7000 3700
+	1    0    0    -1  
+$EndComp
+Connection ~ 7000 2950
+Connection ~ 7150 2950
+Text Notes 7150 2950 0    60   ~ 0
+Vout
+$Comp
+L R R1
+U 1 1 5754A8BE
+P 5350 3100
+F 0 "R1" V 5430 3100 50  0000 C CNN
+F 1 "100K" V 5350 3100 50  0000 C CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" V 5280 3100 50  0001 C CNN
+F 3 "" H 5350 3100 50  0000 C CNN
+	1    5350 3100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4900 3250 5500 3250
+Connection ~ 5100 3250
+Connection ~ 6750 2950
+Connection ~ 6750 3250
+Connection ~ 5350 2950
+Connection ~ 5350 3250
+Wire Wire Line
+	5100 3250 5100 3400
+$Comp
+L CP C1
+U 1 1 5754A94D
+P 5100 3550
+F 0 "C1" H 5125 3650 50  0000 L CNN
+F 1 "10uF" H 5125 3450 50  0000 L CNN
+F 2 "Capacitors_SMD:c_elec_5x5.3" H 5138 3400 50  0001 C CNN
+F 3 "" H 5100 3550 50  0000 C CNN
+	1    5100 3550
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR2
+U 1 1 5754A981
+P 5100 3700
+F 0 "#PWR2" H 5100 3450 50  0001 C CNN
+F 1 "GND" H 5100 3550 50  0000 C CNN
+F 2 "" H 5100 3700 50  0000 C CNN
+F 3 "" H 5100 3700 50  0000 C CNN
+	1    5100 3700
+	1    0    0    -1  
+$EndComp
+$Comp
+L CONN_01X03 P1
+U 1 1 5754C905
+P 3650 3150
+F 0 "P1" H 3650 3350 50  0000 C CNN
+F 1 "CONN_01X03" V 3750 3150 50  0000 C CNN
+F 2 "Connectors_JST:JST_PH_S3B-PH-K_03x2.00mm_Angled" H 3650 3150 50  0001 C CNN
+F 3 "" H 3650 3150 50  0000 C CNN
+	1    3650 3150
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	3900 3250 3850 3250
+Wire Wire Line
+	3850 3050 3950 3050
+Wire Wire Line
+	3950 3050 3950 2750
+$Comp
+L GND #PWR1
+U 1 1 5754CC86
+P 3950 2750
+F 0 "#PWR1" H 3950 2500 50  0001 C CNN
+F 1 "GND" H 3950 2600 50  0000 C CNN
+F 2 "" H 3950 2750 50  0000 C CNN
+F 3 "" H 3950 2750 50  0000 C CNN
+	1    3950 2750
+	-1   0    0    1   
+$EndComp
+$Comp
+L R R4
+U 1 1 5754CD60
+P 5350 2800
+F 0 "R4" V 5430 2800 50  0000 C CNN
+F 1 "15K" V 5350 2800 50  0000 C CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" V 5280 2800 50  0001 C CNN
+F 3 "" H 5350 2800 50  0000 C CNN
+	1    5350 2800
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR3
+U 1 1 5754CDEF
+P 5350 2550
+F 0 "#PWR3" H 5350 2300 50  0001 C CNN
+F 1 "GND" H 5350 2400 50  0000 C CNN
+F 2 "" H 5350 2550 50  0000 C CNN
+F 3 "" H 5350 2550 50  0000 C CNN
+	1    5350 2550
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	5350 2650 5350 2550
+$Comp
+L GND #PWR4
+U 1 1 5754CF86
+P 6050 3700
+F 0 "#PWR4" H 6050 3450 50  0001 C CNN
+F 1 "GND" H 6050 3550 50  0000 C CNN
+F 2 "" H 6050 3700 50  0000 C CNN
+F 3 "" H 6050 3700 50  0000 C CNN
+	1    6050 3700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5500 2950 5350 2950
+Wire Wire Line
+	6650 3250 6750 3250
+Wire Wire Line
+	7000 3400 7000 3700
+Wire Wire Line
+	6750 3550 6750 3700
+Wire Wire Line
+	6050 3550 6050 3700
+Text HLabel 8050 2950 2    60   Input ~ 0
+5V
+Text HLabel 8050 3200 2    60   Input ~ 0
+GND
+Wire Wire Line
+	8050 3200 7850 3200
+$Comp
+L GND #PWR7
+U 1 1 575C35EB
+P 7850 3200
+F 0 "#PWR7" H 7850 2950 50  0001 C CNN
+F 1 "GND" H 7850 3050 50  0000 C CNN
+F 2 "" H 7850 3200 50  0000 C CNN
+F 3 "" H 7850 3200 50  0000 C CNN
+	1    7850 3200
+	0    1    1    0   
+$EndComp
+$Comp
+L SWITCH_INV SW1
+U 1 1 575C3486
+P 4400 3250
+F 0 "SW1" H 4200 3400 50  0000 C CNN
+F 1 "SWITCH_INV" H 4250 3100 50  0000 C CNN
+F 2 "Buttons_Switches_ThroughHole:SW_Micro_SPST" H 4400 3250 50  0001 C CNN
+F 3 "" H 4400 3250 50  0000 C CNN
+	1    4400 3250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4900 3250 4900 3350
+$EndSCHEMATC

@@ -1,4 +1,4 @@
-update=25-Jun-16 11:21:44
+update=25-Jun-16 10:16:03
 version=1
 last_client=kicad
 [pcbnew]
@@ -59,4 +59,3 @@ LibName27=atmel
 LibName28=contrib
 LibName29=valves
 LibName30=autoCar
-LibName31=C:/Program Files/KiCad/share/kicad/template/BeagleBone-Black-Cape/BeagleBone-Black-Cape-cache
